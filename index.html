@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chủ Tịch Hồ Chí Minh - Tấm Gương Sáng Cho Muôn Đời</title>
+    <title>Chủ Tịch Hồ Chí Minh - Tấm Gương Sáng Cho Thiếu Nhi Việt Nam</title>
 
     <!-- Google Fonts & FontAwesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -144,15 +144,14 @@
         }
       }
 
-      /* --- 2. HEADER & NAVBAR --- */
+      /* --- 2. HEADER & NAVBAR (ĐÃ TẮT ĐÓNG BẰNG / STICKY) --- */
       header {
         background: linear-gradient(
           135deg,
           var(--primary-dark),
           var(--primary-color)
         );
-        position: sticky;
-        top: 0;
+        position: relative;
         z-index: 1000;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         border-bottom: 3px solid var(--accent-color);
@@ -231,10 +230,11 @@
       .hero {
         position: relative;
         background:
-          linear-gradient(rgba(0, 0, 0, 0.45), rgba(127, 0, 0, 0.55)),
-          url("bannerBac.jpg") center/cover no-repeat;
+          linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45)),
+          url("bannerBac.jpg") center/contain no-repeat;
+        background-color: var(--primary-dark);
         color: #ffffff;
-        padding: 120px 20px 100px 20px;
+        padding: 60px 20px;
         text-align: center;
         border-bottom: 6px solid var(--accent-color);
       }
@@ -242,47 +242,48 @@
         max-width: 850px;
         margin: 0 auto;
         padding: 20px 10px;
-        background: transparent;
-        box-shadow: none;
+        background: transparent !important;
+        box-shadow: none !important;
       }
       .hero-title {
         font-family: "Merriweather", serif;
-        font-size: 3rem;
+        font-size: clamp(1.4rem, 4vw, 3rem);
         color: var(--accent-color);
         margin-bottom: 12px;
-        text-shadow: 0 3px 6px rgba(0, 0, 0, 0.8);
+        text-shadow: 0 3px 6px rgba(0, 0, 0, 0.9);
       }
       .hero-subtitle {
         font-style: italic;
-        font-size: 1.3rem;
+        font-size: clamp(0.9rem, 2.5vw, 1.3rem);
         color: #f9f9f9;
-        margin-bottom: 20px;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+        margin-bottom: 15px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
       }
       .typing-container {
         font-weight: bold;
-        font-size: 1.4rem;
+        font-size: clamp(1rem, 2.8vw, 1.4rem);
         color: #ffeb3b;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
         min-height: 40px;
         text-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
       }
       .hero-desc {
         color: #f1f1f1;
-        margin: 0 auto 35px auto;
-        font-size: 1.1rem;
-        line-height: 1.8;
+        margin: 0 auto 25px auto;
+        font-size: clamp(0.85rem, 2vw, 1.1rem);
+        line-height: 1.6;
         max-width: 780px;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
       }
 
       .btn-cta {
         display: inline-block;
         background-color: var(--accent-color);
         color: var(--primary-dark);
-        padding: 14px 35px;
+        padding: 12px 30px;
         border-radius: 30px;
         font-weight: 700;
+        font-size: clamp(0.85rem, 1.8vw, 1rem);
         text-decoration: none;
         transition: var(--transition);
         border: none;
@@ -681,7 +682,7 @@
         box-shadow: 0 6px 20px rgba(251, 192, 45, 0.5);
       }
 
-      /* --- 9. GUESTBOOK SECTION (NÂNG CẤP UI & KHUNG CUỘN DỮ LIỆU) --- */
+      /* --- 9. GUESTBOOK SECTION --- */
       .guestbook-container {
         padding: 40px;
         max-width: 800px;
@@ -731,7 +732,6 @@
         background: #ffffff;
       }
 
-      /* Khung cuộn cố định chiều cao cho danh sách lưu bút */
       .guestbook-scroll-box {
         max-height: 400px;
         overflow-y: auto;
@@ -752,7 +752,6 @@
         border-radius: 10px;
       }
 
-      /* Thẻ hiển thị lời chúc */
       .guestbook-item {
         background: linear-gradient(
           135deg,
@@ -858,7 +857,7 @@
         }
       }
 
-      /* --- 11. MODAL ĐỌC THƠ ĐỘNG --- */
+      /* --- 11. MODAL ĐỌC THƠ ĐỘNG (ĐÃ SỬA BỐ CỤC NÚT ĐỂ KHÔNG BỊ ĐÈ KHI ZOOM) --- */
       .modal {
         display: none;
         position: fixed;
@@ -883,7 +882,7 @@
       }
 
       .modal-content {
-        padding: 40px;
+        padding: 30px 20px;
         max-width: 850px;
         width: 92%;
         max-height: 85vh;
@@ -930,14 +929,14 @@
 
       .close-btn {
         position: absolute;
-        top: 18px;
-        right: 22px;
-        font-size: 2rem;
+        top: 15px;
+        right: 15px;
+        font-size: 1.5rem;
         cursor: pointer;
         color: #fff;
         background: var(--primary-color);
-        width: 42px;
-        height: 42px;
+        width: 36px;
+        height: 36px;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -973,13 +972,15 @@
         border: 0;
       }
 
-      .modal-header-actions {
+      /* Thanh công cụ trong modal (Cỡ chữ & Nút nghe MP3 riêng) */
+      .modal-toolbar {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        gap: 12px;
+        gap: 15px;
         margin-bottom: 20px;
+        padding: 5px 10px;
       }
 
       .font-controls {
@@ -991,6 +992,7 @@
         padding: 6px 14px;
         border-radius: 30px;
         border: 1px dashed var(--primary-color);
+        font-size: 0.95rem;
       }
       .font-btn {
         padding: 4px 10px;
@@ -1014,12 +1016,13 @@
         background: linear-gradient(135deg, #ff416c, #ff4b2b);
         color: white;
         border: none;
-        padding: 8px 18px;
+        padding: 8px 20px;
         border-radius: 30px;
         font-weight: 700;
         cursor: pointer;
         box-shadow: 0 4px 15px rgba(255, 65, 108, 0.4);
         transition: var(--transition);
+        font-size: 0.95rem;
       }
       .btn-speech:hover {
         transform: scale(1.05);
@@ -1043,9 +1046,9 @@
 
       .modal-title-custom {
         color: var(--primary-color);
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         font-family: "Merriweather", serif;
-        margin-bottom: 25px;
+        margin-bottom: 15px;
         text-align: center;
         border-bottom: 2px dashed rgba(183, 28, 28, 0.3);
         padding-bottom: 12px;
@@ -1063,7 +1066,7 @@
         text-align: center;
         font-family: "Merriweather", serif;
         background: rgba(255, 255, 255, 0.7);
-        padding: 30px;
+        padding: 25px;
         border-radius: 16px;
         border: 1px solid rgba(251, 192, 45, 0.5);
         box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.03);
@@ -1117,16 +1120,11 @@
 
       /* --- TỐI ƯU RESPONSIVE CHO ĐIỆN THOẠI --- */
       @media (max-width: 768px) {
-        .hero-title {
-          font-size: 1.8rem;
-        }
-        .hero-subtitle {
-          font-size: 1.05rem;
-        }
         .hero {
-          padding: 80px 15px 60px 15px;
+          padding: 40px 10px;
+          background-size: contain;
+          background-position: center top;
         }
-
         .navbar {
           flex-direction: column;
           gap: 10px;
@@ -1668,7 +1666,7 @@
       </div>
     </section>
 
-    <!-- QR CODE SECTION (ĐÃ CẬP NHẬT ẢNH GAME.PNG VÀ LINK TRẮC NGHIỆM) -->
+    <!-- QR CODE SECTION -->
     <section id="qr" class="container section-padding">
       <div class="qr-section glass-card">
         <h2>
@@ -1705,11 +1703,12 @@
       </div>
     </section>
 
-    <!-- MODAL POPUP THƠ NÂNG CẤP VỚI LOA AI & HIỆU ỨNG ĐỘNG -->
+    <!-- MODAL POPUP THƠ NÂNG CẤP VỚI NÚT ĐIỀU KHIỂN & AUDIO MP3 RIÊNG -->
     <div id="readModal" class="modal">
       <div class="modal-content" id="modalContentBox">
         <div class="effect-container" id="modalEffects"></div>
 
+        <!-- Nút Đóng X độc lập góc phải -->
         <span class="close-btn" onclick="closeModal()">&times;</span>
 
         <div
@@ -1720,19 +1719,25 @@
           <iframe id="modalIframe" src="" allowfullscreen></iframe>
         </div>
 
-        <div class="modal-header-actions">
+        <h2 id="modalTitle" class="modal-title-custom"></h2>
+
+        <!-- THANH CÔNG CỤ DƯỚI TIÊU ĐỀ (KHÔNG BỊ ĐÈ KHI ZOOM) -->
+        <div class="modal-toolbar" id="modalToolbar">
           <div class="font-controls">
             <span>Cỡ chữ:</span>
             <button class="font-btn" onclick="changeFontSize(1)">A+</button>
             <button class="font-btn" onclick="changeFontSize(-1)">A-</button>
           </div>
-          <button id="speechBtn" class="btn-speech" onclick="toggleSpeech()">
+          <button
+            id="speechBtn"
+            class="btn-speech"
+            onclick="toggleAudioSpeech()"
+          >
             <i class="fa-solid fa-volume-high" id="speakerIcon"></i>
             <span id="speechText">Nghe đọc thơ</span>
           </button>
         </div>
 
-        <h2 id="modalTitle" class="modal-title-custom"></h2>
         <div id="modalBody" class="modal-body-custom"></div>
       </div>
     </div>
@@ -1751,7 +1756,9 @@
     </footer>
 
     <!-- AUDIO NỀN -->
-    <audio id="bgAudio" loop autoplay src="nhac1.mp3"></audio>
+    <audio id="bgAudio" loop autoplay src="nhac1.mp3" volume="0.3"></audio>
+    <!-- AUDIO PHÁT THƠ RIÊNG -->
+    <audio id="poemAudio" preload="auto"></audio>
 
     <!-- FIREBASE SDK & APP SCRIPTS -->
     <script type="module">
@@ -1892,11 +1899,12 @@
       }
       window.onload = typeEffect;
 
-      // 3. KHO DỮ LIỆU THƠ ĐẦY ĐỦ
+      // 3. KHO DỮ LIỆU THƠ ĐẦY ĐỦ KÈM FILE AUDIO MP3 TƯƠNG ƯNG
       const poemsData = {
         poem1: {
           title: "📖 Bài thơ: Ảnh Bác (Trần Đăng Khoa)",
           theme: "modal-theme-poem1",
+          audio: "AnhBac.mp3",
           content: `Nhà em treo ảnh Bác Hồ
 Bên trên là một lá cờ đỏ tươi
 Ngày ngày Bác mỉm miệng cười
@@ -1915,7 +1923,8 @@ Ngày ngày Bác vẫn mỉm cười với em.`,
         poem2: {
           title: "📖 Bài thơ: Đêm Nay Bác Không Ngủ (Minh Huệ)",
           theme: "modal-theme-poem2",
-          content: `Anh đội viên thức dậy
+          audio: "Demnaybackngu.mp3",
+          content: `
 Thấy trời khuya lắm rồi
 Mà sao Bác vẫn ngồi
 Đêm nay Bác không ngủ.
@@ -1998,7 +2007,8 @@ Bác là Hồ Chí Minh.`,
         poem3: {
           title: "📖 Bài thơ: Bác Ơi! (Tố Hữu)",
           theme: "modal-theme-poem3",
-          content: `Suốt mấy hôm rày đau tiễn đưa
+          audio: "Bacoi.mp3",
+          content: `
 Đời tuôn nước mắt, trời tuôn mưa…
 Chiều nay con chạy về thăm Bác
 Ướt lạnh vườn rau, mấy gốc dừa!
@@ -2066,7 +2076,8 @@ Vững như muôn ngọn dải Trường Sơn.`,
         poem4: {
           title: "📖 Bài thơ: Bác Hồ Kính Yêu",
           theme: "modal-theme-poem4",
-          content: `Bác hiến dâng mãi mãi
+          audio: "Bachokinhyeu.mp3",
+          content: `
 Mùa Xuân nở rộ hoa
 Nụ cười vang làng xóm
 Vui tỏa khắp nơi nơi
@@ -2127,7 +2138,10 @@ Hòa chung khúc thành công!`,
         "modalVideoContainer",
       );
       const modalEffects = document.getElementById("modalEffects");
+      const modalToolbar = document.getElementById("modalToolbar");
       let currentFontSize = 1.2;
+      const poemAudio = document.getElementById("poemAudio");
+      let currentAudioFile = "";
 
       function updateJourneyProgress(stepNumber) {
         for (let i = 1; i <= 3; i++) {
@@ -2147,14 +2161,14 @@ Hòa chung khúc thành công!`,
 
       function openModalAndProgress(stepNum, title, content, videoUrl) {
         updateJourneyProgress(stepNum);
-        stopSpeech();
+        stopPoemAudio();
         modalContentBox.className = "modal-content modal-theme-default";
         modalEffects.innerHTML = "";
         modalTitle.innerText = "🎬 " + title;
         modalBody.innerText = content;
         modalBody.style.fontSize = "1.15rem";
         currentFontSize = 1.15;
-        document.getElementById("speechBtn").style.display = "none";
+        modalToolbar.style.display = "none"; // Ẩn nút đọc/cỡ chữ ở thước phim lịch sử
 
         if (videoUrl) {
           modalIframe.src = videoUrl;
@@ -2169,7 +2183,7 @@ Hòa chung khúc thành công!`,
       function openPoemModal(poemKey) {
         const data = poemsData[poemKey];
         if (data) {
-          stopSpeech();
+          stopPoemAudio();
           modalContentBox.className = "modal-content " + data.theme;
           modalTitle.innerText = data.title;
           modalBody.innerText = data.content;
@@ -2177,7 +2191,8 @@ Hòa chung khúc thành công!`,
           currentFontSize = 1.2;
           modalIframe.src = "";
           modalVideoContainer.style.display = "none";
-          document.getElementById("speechBtn").style.display = "inline-flex";
+          modalToolbar.style.display = "flex"; // Hiển thị thanh công cụ cho bài thơ
+          currentAudioFile = data.audio;
 
           createModalEffects(poemKey);
           modal.style.display = "flex";
@@ -2185,7 +2200,7 @@ Hòa chung khúc thành công!`,
       }
 
       function openModalStatic(title, content, themeClass) {
-        stopSpeech();
+        stopPoemAudio();
         modalContentBox.className =
           "modal-content " + (themeClass || "modal-theme-default");
         modalEffects.innerHTML = "";
@@ -2195,7 +2210,7 @@ Hòa chung khúc thành công!`,
         currentFontSize = 1.2;
         modalIframe.src = "";
         modalVideoContainer.style.display = "none";
-        document.getElementById("speechBtn").style.display = "none";
+        modalToolbar.style.display = "none"; // Ẩn thanh công cụ cho bài văn cảm nhận
         modal.style.display = "flex";
       }
 
@@ -2214,7 +2229,7 @@ Hòa chung khúc thành công!`,
       }
 
       function closeModal() {
-        stopSpeech();
+        stopPoemAudio();
         modal.style.display = "none";
         modalIframe.src = "";
       }
@@ -2227,54 +2242,48 @@ Hòa chung khúc thành công!`,
         if (e.target == modal) closeModal();
       };
 
-      let synth = window.speechSynthesis;
-      let isSpeaking = false;
-
-      function toggleSpeech() {
-        if (!synth) {
-          alert("Trình duyệt của bạn không hỗ trợ đọc văn bản tự động!");
-          return;
-        }
-
+      // Xử lý phát / dừng file audio mp3 riêng biệt
+      function toggleAudioSpeech() {
         const speechBtn = document.getElementById("speechBtn");
         const speechText = document.getElementById("speechText");
         const speakerIcon = document.getElementById("speakerIcon");
 
-        if (isSpeaking) {
-          synth.cancel();
-          isSpeaking = false;
+        if (!currentAudioFile) return;
+
+        if (!poemAudio.paused && poemAudio.src.includes(currentAudioFile)) {
+          poemAudio.pause();
           speechBtn.classList.remove("playing");
           speechText.innerText = "Nghe đọc thơ";
           speakerIcon.className = "fa-solid fa-volume-high";
         } else {
-          const textToRead = modalTitle.innerText + ". " + modalBody.innerText;
-          let utterThis = new SpeechSynthesisUtterance(textToRead);
-          utterThis.lang = "vi-VN";
-          utterThis.rate = 0.9;
-          utterThis.pitch = 1.1;
-
-          utterThis.onstart = function () {
-            isSpeaking = true;
-            speechBtn.classList.add("playing");
-            speechText.innerText = "Đang đọc...";
-            speakerIcon.className = "fa-solid fa-volume-xmark";
-          };
-
-          utterThis.onend = function () {
-            isSpeaking = false;
-            speechBtn.classList.remove("playing");
-            speechText.innerText = "Nghe đọc thơ";
-            speakerIcon.className = "fa-solid fa-volume-high";
-          };
-
-          synth.speak(utterThis);
+          poemAudio.src = currentAudioFile;
+          poemAudio
+            .play()
+            .then(() => {
+              speechBtn.classList.add("playing");
+              speechText.innerText = "Đang phát...";
+              speakerIcon.className = "fa-solid fa-volume-xmark";
+            })
+            .catch((err) => {
+              alert("Không tìm thấy file âm thanh: " + currentAudioFile);
+            });
         }
       }
 
-      function stopSpeech() {
-        if (synth) {
-          synth.cancel();
-          isSpeaking = false;
+      poemAudio.onended = function () {
+        const speechBtn = document.getElementById("speechBtn");
+        if (speechBtn) {
+          speechBtn.classList.remove("playing");
+          document.getElementById("speechText").innerText = "Nghe đọc thơ";
+          document.getElementById("speakerIcon").className =
+            "fa-solid fa-volume-high";
+        }
+      };
+
+      function stopPoemAudio() {
+        if (poemAudio) {
+          poemAudio.pause();
+          poemAudio.currentTime = 0;
           const speechBtn = document.getElementById("speechBtn");
           if (speechBtn) {
             speechBtn.classList.remove("playing");
@@ -2291,6 +2300,7 @@ Hòa chung khúc thành công!`,
       };
 
       const audio = document.getElementById("bgAudio");
+      audio.volume = 0.25; // Thêm dòng này vào
       let isPlaying = false;
       document.getElementById("musicToggle").onclick = () => {
         if (isPlaying) {
@@ -2303,6 +2313,7 @@ Hòa chung khúc thành công!`,
 
       document.addEventListener("DOMContentLoaded", function () {
         const audio = document.getElementById("bgAudio");
+        audio.volume = 0.25; // Thêm dòng này vào
         audio.play().catch((error) => {
           document.body.addEventListener(
             "click",
